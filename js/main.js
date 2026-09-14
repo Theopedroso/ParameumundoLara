@@ -1,7 +1,7 @@
 // ======================================================
 // EDITE AQUI: data em que vocês começaram a namorar
 // ======================================================
-const START_DATE = new Date("2023-01-01T00:00:00");
+const START_DATE = new Date("2026-08-30T00:00:00");
 
 // ---------- Marca a página ativa na navegação ----------
 (function highlightNav() {
