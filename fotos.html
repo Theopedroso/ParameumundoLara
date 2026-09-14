@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Nossos Momentos 📸</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">💗</span> ParaLara</div>
+    <nav class="nav-links">
+      <a href="index.html" data-page="index.html"><span class="ic">🏠</span> Início</a>
+      <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span> Playlist</a>
+      <a href="fotos.html" data-page="fotos.html"><span class="ic">📸</span> Fotos</a>
+      <a href="curiosidades.html" data-page="curiosidades.html"><span class="ic">💭</span> Curiosidades</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="together-counter">
+        <div class="label">Juntos há</div>
+        <div class="value" id="togetherCompact">--</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-header">
+      <h1>Nossos Momentos 📸</h1>
+      <p>Coloque os arquivos de foto na pasta <code>/fotos</code> com os nomes indicados abaixo que elas aparecem aqui automaticamente.</p>
+    </div>
+
+    <div class="photo-grid" id="photoGrid">
+      <!-- Para adicionar fotos: salve os arquivos em /fotos/ com esses nomes exatos (foto1.jpg, foto2.jpg...) -->
+    </div>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html" data-page="index.html"><span class="ic">🏠</span>Início</a>
+  <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span>Playlist</a>
+  <a href="fotos.html" data-page="fotos.html"><span class="ic">📸</span>Fotos</a>
+  <a href="curiosidades.html" data-page="curiosidades.html"><span class="ic">💭</span>Curiosidades</a>
+</nav>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
+  <img id="lightboxImg" src="" alt="" />
+  <button class="lightbox-nav next" id="lightboxNext">›</button>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/fotos.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Curiosidades 💭</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">💗</span> ParaLara</div>
+    <nav class="nav-links">
+      <a href="index.html" data-page="index.html"><span class="ic">🏠</span> Início</a>
+      <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span> Playlist</a>
+      <a href="fotos.html" data-page="fotos.html"><span class="ic">📸</span> Fotos</a>
+      <a href="curiosidades.html" data-page="curiosidades.html"><span class="ic">💭</span> Curiosidades</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="together-counter">
+        <div class="label">Juntos há</div>
+        <div class="value" id="togetherCompact">--</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-header">
+      <h1>Curiosidades 💭</h1>
+      <p>Clique nas cartas para virar e ver a curiosidade. Depois, teste o quiz do casal!</p>
+    </div>
+
+    <h2 class="section-title">Você sabia? 🤍</h2>
+    <div class="flip-grid" id="flipGrid">
+      <!-- gerado por curiosidades.js -->
+    </div>
+
+    <h2 class="section-title">Quiz: o quanto você me conhece? 💘</h2>
+    <div class="quiz-box" id="quizBox">
+      <div class="quiz-progress" id="quizProgress">Pergunta 1 de 5</div>
+      <div id="quizQuestions"></div>
+      <div class="quiz-result" id="quizResult">
+        <div class="score" id="quizScore">0/5</div>
+        <p id="quizMessage"></p>
+        <button class="btn btn-primary" id="quizRestart">Jogar de novo</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html" data-page="index.html"><span class="ic">🏠</span>Início</a>
+  <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span>Playlist</a>
+  <a href="fotos.html" data-page="fotos.html"><span class="ic">📸</span>Fotos</a>
+  <a href="curiosidades.html" data-page="curiosidades.html"><span class="ic">💭</span>Curiosidades</a>
+</nav>
+
+<script src="js/main.js"></script>
+<script src="js/curiosidades.js"></script>
+</body>
+</html>

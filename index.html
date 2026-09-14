@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Para Lara 💗</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">💗</span> ParaLara</div>
+    <nav class="nav-links">
+      <a href="index.html" data-page="index.html"><span class="ic">🏠</span> Início</a>
+      <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span> Playlist</a>
+      <a href="fotos.html" data-page="fotos.html"><span class="ic">📸</span> Fotos</a>
+      <a href="curiosidades.html" data-page="curiosidades.html"><span class="ic">💭</span> Curiosidades</a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="together-counter">
+        <div class="label">Juntos há</div>
+        <div class="value" id="togetherCompact">--</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <section class="hero">
+      <h1>Para o meu mundo, Lara 💗</h1>
+      <p class="subtitle">(a minha pequena príncipe 👑)</p>
+
+      <div class="together-hero">
+        <div class="unit"><span class="num" id="hDays">0</span><span class="lbl">dias</span></div>
+        <div class="unit"><span class="num" id="hHours">00</span><span class="lbl">horas</span></div>
+        <div class="unit"><span class="num" id="hMinutes">00</span><span class="lbl">min</span></div>
+        <div class="unit"><span class="num" id="hSeconds">00</span><span class="lbl">seg</span></div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="playlist.html">▶ Ouvir nossa playlist</a>
+        <button class="btn btn-ghost" id="openLetter">💌 Abrir uma cartinha</button>
+      </div>
+
+      <div class="quick-links">
+        <a class="quick-card" href="playlist.html">
+          <span class="qi">🎵</span>
+          <h3>Nossa Playlist</h3>
+          <p>As músicas que contam a nossa história.</p>
+        </a>
+        <a class="quick-card" href="fotos.html">
+          <span class="qi">📸</span>
+          <h3>Nossos Momentos</h3>
+          <p>Fotos guardadas com carinho.</p>
+        </a>
+        <a class="quick-card" href="curiosidades.html">
+          <span class="qi">💭</span>
+          <h3>Curiosidades</h3>
+          <p>Coisinhas sobre a gente e um quiz pra testar você.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html" data-page="index.html"><span class="ic">🏠</span>Início</a>
+  <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span>Playlist</a>
+  <a href="fotos.html" data-page="fotos.html"><span class="ic">📸</span>Fotos</a>
+  <a href="curiosidades.html" data-page="curiosidades.html"><span class="ic">💭</span>Curiosidades</a>
+</nav>
+
+<div class="letter-modal" id="letterModal">
+  <div class="letter-card">
+    <button class="letter-close" id="closeLetter">✕</button>
+    <div class="stamp">💌</div>
+    <h3>Pra você, Lara</h3>
+    <!-- EDITE AQUI o texto da cartinha -->
+    <p>Escreva aqui uma mensagem bem sua para a Lara.
+
+Pode ser sobre como vocês se conheceram, o que você mais ama nela,
+ou só um "eu te amo" bem sincero.
+
+Esse texto está em index.html, dentro da div "letterModal".</p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
