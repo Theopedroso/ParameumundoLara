@@ -1,25 +1,22 @@
 // ======================================================
-// EDITE AQUI: quantas fotos existem e a legenda de cada uma.
-// Salve os arquivos em /fotos/ com o nome indicado em "file".
+// EDITE AQUI: as legendas de cada foto.
+// Para trocar uma foto, substitua o arquivo em /fotos/ mantendo o mesmo nome.
 // ======================================================
 const PHOTOS = [
-  { file: "fotos/foto1.jpg", caption: "Momento 1" },
-  { file: "fotos/foto2.jpg", caption: "Momento 2" },
-  { file: "fotos/foto3.jpg", caption: "Momento 3" },
-  { file: "fotos/foto4.jpg", caption: "Momento 4" },
-  { file: "fotos/foto5.jpg", caption: "Momento 5" },
-  { file: "fotos/foto6.jpg", caption: "Momento 6" },
-  { file: "fotos/foto7.jpg", caption: "Momento 7" },
-  { file: "fotos/foto8.jpg", caption: "Momento 8" },
+  { file: "fotos/foto1.jpg", caption: "Dormindo bonito" },
+  { file: "fotos/foto2.jpg", caption: "De bobeira na sala" },
+  { file: "fotos/foto3.jpg", caption: "Ela sendo ela" },
+  { file: "fotos/foto4.jpg", caption: "Careta oficial do casal" },
+  { file: "fotos/foto5.jpg", caption: "Aquele olhar" },
+  { file: "fotos/foto6.jpg", caption: "Eu e o Shrek" },
+  { file: "fotos/foto7.jpg", caption: "As princesas" },
 ];
 
 const grid = document.getElementById("photoGrid");
-const loadedPhotos = [];
 
 PHOTOS.forEach((photo, index) => {
   const card = document.createElement("div");
   card.className = "photo-card";
-  card.dataset.index = index;
 
   const img = document.createElement("img");
   img.src = photo.file;
@@ -31,14 +28,19 @@ PHOTOS.forEach((photo, index) => {
   placeholder.style.display = "none";
   placeholder.innerHTML = `<span class="ph-icon">💗</span><span>${photo.caption}<br>(adicione ${photo.file})</span>`;
 
+  const caption = document.createElement("div");
+  caption.className = "photo-caption";
+  caption.textContent = photo.caption;
+
   img.addEventListener("error", () => {
     img.style.display = "none";
+    caption.style.display = "none";
     placeholder.style.display = "flex";
   });
-  img.addEventListener("load", () => loadedPhotos.push(photo.file));
 
   card.appendChild(img);
   card.appendChild(placeholder);
+  card.appendChild(caption);
   card.addEventListener("click", () => openLightbox(index));
   grid.appendChild(card);
 });
@@ -46,6 +48,7 @@ PHOTOS.forEach((photo, index) => {
 // ---------- Lightbox ----------
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
+const lightboxCaption = document.getElementById("lightboxCaption");
 let currentIndex = 0;
 
 function openLightbox(index) {
@@ -53,6 +56,7 @@ function openLightbox(index) {
   if (img.style.display === "none") return; // sem foto real ainda
   currentIndex = index;
   lightboxImg.src = PHOTOS[index].file;
+  lightboxCaption.textContent = PHOTOS[index].caption;
   lightbox.classList.add("open");
 }
 
@@ -69,6 +73,7 @@ function showRelative(delta) {
     if (img.style.display !== "none") {
       currentIndex = next;
       lightboxImg.src = PHOTOS[currentIndex].file;
+      lightboxCaption.textContent = PHOTOS[currentIndex].caption;
       return;
     }
   }

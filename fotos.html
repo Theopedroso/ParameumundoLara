@@ -6,6 +6,9 @@
 <meta name="robots" content="noindex, nofollow" />
 <title>Nossos Momentos 📸</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -29,11 +32,11 @@
   <main class="main">
     <div class="page-header">
       <h1>Nossos Momentos 📸</h1>
-      <p>Coloque os arquivos de foto na pasta <code>/fotos</code> com os nomes indicados abaixo que elas aparecem aqui automaticamente.</p>
+      <p>Toque em qualquer foto para ver ela grande.</p>
     </div>
 
     <div class="photo-grid" id="photoGrid">
-      <!-- Para adicionar fotos: salve os arquivos em /fotos/ com esses nomes exatos (foto1.jpg, foto2.jpg...) -->
+      <!-- gerado por js/fotos.js. Para adicionar fotos, salve em /fotos/ e liste no arquivo. -->
     </div>
   </main>
 </div>
@@ -48,7 +51,10 @@
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" id="lightboxClose">✕</button>
   <button class="lightbox-nav prev" id="lightboxPrev">‹</button>
-  <img id="lightboxImg" src="" alt="" />
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" src="" alt="" />
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
   <button class="lightbox-nav next" id="lightboxNext">›</button>
 </div>
 
