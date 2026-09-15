@@ -1,7 +1,8 @@
 // ======================================================
-// EDITE AQUI: as músicas e a frase que aparece em cada uma.
+// EDITE AQUI: as músicas e o verso que aparece em cada uma.
 // "id" é o trecho do link do Spotify que vem depois de /track/
-// "frase" é o texto que aparece no card junto com a música.
+// "frase" é o verso da própria música que aparece em destaque no card.
+// (O nome da música e o artista aparecem sozinhos, buscados do Spotify.)
 // ======================================================
 const TRACKS = [
   { id: "44A0o4jA8F2ZF03Zacwlwx", frase: "Começa por aqui. Essa é a nossa abertura." },
@@ -23,9 +24,11 @@ const card = document.getElementById("playerCard");
 const phraseEl = document.getElementById("playerPhrase");
 const embedEl = document.getElementById("playerEmbed");
 const counterEl = document.getElementById("playerCounter");
+const nameEl = document.getElementById("playerTrackName");
 const dotsEl = document.getElementById("playerDots");
 const hero = document.getElementById("playlistHero");
 
+const nameCache = {};
 let current = 0;
 
 TRACKS.forEach((_, i) => {
@@ -35,6 +38,24 @@ TRACKS.forEach((_, i) => {
   dot.addEventListener("click", () => render(i));
   dotsEl.appendChild(dot);
 });
+
+// Busca nome e artista no Spotify. Se não der, o card fica só com o verso.
+function loadName(id) {
+  if (nameCache[id] !== undefined) {
+    nameEl.textContent = nameCache[id];
+    return;
+  }
+  nameEl.textContent = "";
+  fetch(`https://open.spotify.com/oembed?url=https://open.spotify.com/track/${id}`)
+    .then((res) => (res.ok ? res.json() : Promise.reject()))
+    .then((data) => {
+      nameCache[id] = data.title || "";
+      if (TRACKS[current].id === id) nameEl.textContent = nameCache[id];
+    })
+    .catch(() => {
+      nameCache[id] = "";
+    });
+}
 
 function render(index) {
   current = (index + TRACKS.length) % TRACKS.length;
@@ -46,6 +67,7 @@ function render(index) {
     phraseEl.textContent = track.frase;
     embedEl.innerHTML = `<iframe src="https://open.spotify.com/embed/track/${track.id}?utm_source=generator&theme=0" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
     counterEl.textContent = `Faixa ${String(current + 1).padStart(2, "0")} de ${TRACKS.length}`;
+    loadName(track.id);
     hero.classList.add("playing");
 
     dotsEl.querySelectorAll(".player-dot").forEach((dot, i) => {
@@ -53,7 +75,7 @@ function render(index) {
     });
 
     card.classList.add("is-visible");
-  }, 180);
+  }, 200);
 }
 
 document.getElementById("prevTrack").addEventListener("click", () => render(current - 1));

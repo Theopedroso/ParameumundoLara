@@ -15,6 +15,7 @@
 <div class="app">
   <aside class="sidebar">
     <div class="brand"><span class="logo">💗</span> ParaLara</div>
+    <p class="nav-label">Navegar</p>
     <nav class="nav-links">
       <a href="index.html" data-page="index.html"><span class="ic">🏠</span> Início</a>
       <a href="playlist.html" data-page="playlist.html"><span class="ic">🎵</span> Playlist</a>
@@ -39,10 +40,16 @@
     </div>
 
     <section class="player-stage">
-      <div class="player-counter" id="playerCounter">Faixa 01</div>
-
       <article class="player-card is-visible" id="playerCard">
-        <p class="player-phrase" id="playerPhrase"></p>
+        <div class="player-top">
+          <span class="player-counter" id="playerCounter">Faixa 01</span>
+          <span class="player-track-name" id="playerTrackName"></span>
+        </div>
+
+        <blockquote class="player-quote">
+          <p class="player-phrase" id="playerPhrase"></p>
+        </blockquote>
+
         <div class="player-embed" id="playerEmbed"></div>
       </article>
 
